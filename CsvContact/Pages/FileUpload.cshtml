@@ -1,0 +1,68 @@
+﻿@page
+@namespace CsvContact.Pages
+@model CsvContact.Pages.FileUploadModel
+@{
+}
+
+<form id="file" method="post" autocomplete="off" enctype="multipart/form-data">
+    <!--panel to upload the file enctype="multipart/form-data"-->
+    <div id="panel1">
+        <div class="row">
+            <h3>Select the file to upload</h3>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <input type="file" class="form-control-file" id="csvFile" name="fileUploadProperties.csvFile">
+            </div>
+        </div>
+    </div>
+
+    <!--panel to match the columns the file-->
+    <div id="panel2">
+        <div class="row">
+            <h3>Write the column number in the load file with the asked name</h3>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Name</b></label>
+                <input type="number" min="1" id="NamePosition" name="fileUploadProperties.NamePosition" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Date of Birth</b></label>
+                <input type="number" min="1" id="DateBirth" name="fileUploadProperties.DateBirth" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Address</b></label>
+                <input type="number" min="1" id="Address" name="fileUploadProperties.Address" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Phone</b></label>
+                <input type="number" min="1" id="Phone" name="fileUploadProperties.Phone" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Credit Card</b></label>
+                <input type="number" min="1" id="CreditCard" name="fileUploadProperties.CreditCard" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Franchise</b></label>
+                <input type="number" min="1" id="Franchise" name="fileUploadProperties.Franchise" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label class="col-form-label"><b>Email</b></label>
+                <input type="number" min="1" id="Email" name="fileUploadProperties.Email" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12">
+                <input id="btnSave" type="submit" class="btn btn-primary" name="btn" value="Save" asp-page-handler="RegisterCvsFile" />
+            </div>
+        </div>
+    </div>
+</form>

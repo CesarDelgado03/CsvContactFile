@@ -1,0 +1,50 @@
+﻿@page
+@namespace CsvContact.Pages
+@model CsvContact.Pages.ContactListModel
+@{
+    
+}
+
+<form id="file" method="post" autocomplete="off">
+    <div class="row">
+        <h3>Filter And see data from contacts and files</h3>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-2">
+            <label class="col-form-label form-inline"><b>Status</b></label>
+        </div>
+        <div class="col-md-3">
+            <select id="Select1" name="SelectStatus" class="form-control">
+                <option value="">--Select--</option>
+                <option value="1">On Hold</option>
+                <option value="2">Processing</option>
+                <option value="3">Fail</option>
+                <option value="4">Finished</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input id="btnSearch" type="submit" class="btn btn-primary form-inline" name="btn" value="Search" />
+        </div>
+    </div>
+        <div class="" id="CsvFaile">
+            <div class="row form-group">
+                <table style="width:100%;" class="table">
+                    <tr>
+                        <th>Id File</th>
+                        <th>Status</th>
+                        <th>User</th>
+                        <th>Saved Contacts</th>
+                    </tr>
+                    @foreach (var item in Model.csvFile)
+                    {
+                        <tr>
+                            <td>@item.IdFile</td>
+                            <td>@item.Status</td>
+                            <td>@item.User</td>
+                            <td>@item.AmmountProcess</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+</form>
